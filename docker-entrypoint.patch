@@ -1,15 +1,17 @@
---- docker-entrypoint.sh
-+++ docker-entrypoint_.sh
-@@ -241,4 +241,12 @@
+--- docker-entrypoint.sh	2017-12-23 16:18:09.000000000 +0100
++++ docker-entrypoint_.sh	2017-12-30 16:51:30.207432434 +0100
+@@ -241,4 +241,14 @@
  	done
  fi
  
 +# Hook to execute /docker-hooks/*.sh files as bash scripts, if found
-+hookfiles=$(find /docker-hooks -name '*.sh' -type f)
-+if [ ! -z ${hookfiles} ]; then
-+    for file in ${hookfiles}; do
-+        bash ${file}
-+    done
++if [ -d /docker-hooks ]; then
++    hookfiles=$(find /docker-hooks -name '*.sh' -type f)
++    if [ ! -z ${hookfiles} ]; then
++        for file in ${hookfiles}; do
++            bash ${file}
++        done
++    fi
 +fi
 +
  exec "$@"
