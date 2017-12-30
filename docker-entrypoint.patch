@@ -1,0 +1,15 @@
+--- docker-entrypoint.sh
++++ docker-entrypoint_.sh
+@@ -241,4 +241,12 @@
+ 	done
+ fi
+ 
++# Hook to execute /docker-hooks/*.sh files as bash scripts, if found
++hookfiles=$(find /docker-hooks -name '*.sh' -type f)
++if [ ! -z ${hookfiles} ]; then
++    for file in ${hookfiles}; do
++        bash ${file}
++    done
++fi
++
+ exec "$@"
