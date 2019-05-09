@@ -20,6 +20,9 @@ and configured to any needs.
 webserver like nginx to launch a working instance of [WordPress]!  
 You need to launch it like in the following example:
 
+    # First launch this image
+    docker run --name wordpress -d derjudge/wordpress-fpm-alpine
+    # Then launch an nginx container
     TODO
 
 ## How recent is this image?
