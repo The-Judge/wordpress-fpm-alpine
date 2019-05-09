@@ -24,7 +24,8 @@ You need to launch it like in the following example:
 
 ## How recent is this image?
 
-The image build is triggered automatically, every time the base image [wordpress:fpm-alpine](https://hub.docker.com/_/wordpress) is updated and every time there are updates to the [Git repository](https://bitbucket.org/Judge82/wordpress-fpm-alpine/src).  
+The image build is triggered automatically, every time the base image [wordpress:fpm-alpine](https://hub.docker.com/_/wordpress)
+is updated and every time there are updates to the [Git repository](https://bitbucket.org/Judge82/wordpress-fpm-alpine/src).  
 This way, it is equally up-to-date as the official WordPress image is.
 
 [WordPress]: https://wordpress.org/
